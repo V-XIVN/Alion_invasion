@@ -17,11 +17,15 @@
             * 提供游戏设置
         2. ship.py
             * 创建飞船
+        3. bullet.py
+            * 提供子弹
 2. 副文件及其作用
     1. [settings.py](/Alion_invasion/settings.py)
         * 储存游戏里的各种设置
     2. [ship.py](/Alion_invasion/ship.py)
         - 创建飞船
+    3. [bullet.py](/Alion_invasion/bullet.py)
+        * 提供子弹
 ### 杂项  
 * 本项目由python编写  
 - 目的是实现python学习的第一个练习项目  
