@@ -15,7 +15,7 @@ class Ship:
         self.moving_left = False
 
         # 获取飞船图像的路径
-        self.path = os.path.join(os.getcwd(), "Alion_invasion/images/20230923093638.png")
+        self.path = os.path.join(os.getcwd(), "Alion_invasion/images/ship.png")
 
         # 加载飞船图像并获取其外接矩形
         self.image = pygame.image.load(self.path)
