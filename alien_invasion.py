@@ -45,6 +45,7 @@ class AlienInvasion:
             self._check_events()
             self._update_screen()
             self.ship.update()
+            self._update_aliens()
             self._update_bullets()
 
             # 保证游戏所在的循环每秒运行165帧，等同于设置刷新率
@@ -98,6 +99,11 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
 
+    def _update_aliens(self):
+        """检查是否有外星人位于屏幕边缘，并更新整个外星人舰队的位置"""
+        self._check_fleet_edges()
+        self.aliens.update()
+
     def _create_fleet(self):
         """创建一个外星人舰队"""
         # 创建一个外星人, 再不断添加，直到没有空间容纳外星人为止
@@ -124,6 +130,19 @@ class AlienInvasion:
         new_alien.rect.x = x_position
         new_alien.rect.y = y_position
         self.aliens.add(new_alien)
+
+    def _check_fleet_edges(self):
+        """在有外星人到达边缘时采取相应的措施"""
+        for alien in self.aliens.sprites():
+            if alien.check_edges():
+                self._change_fleet_direction()
+                break
+
+    def _change_fleet_direction(self):
+        """将整个外星舰队向下移动，并改变他们的方向"""
+        for alien in self.aliens.sprites():
+            alien.rect.y += self.settings.fleet_drop_speed
+        self.settings.fleet_direction *= -1
 
     def _update_screen(self):
         """更新屏幕上的图像，并切换到新屏幕"""
