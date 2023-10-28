@@ -21,6 +21,8 @@
             * 提供子弹
         4. alien.py
             * 提供外星人
+        5. game_stats.py
+            * 保存一些游戏统计信息
 2. 副文件及其作用
     1. [settings.py](/Alion_invasion/settings.py)
         * 储存游戏里的各种设置
@@ -30,7 +32,9 @@
         * 提供子弹
     4. [alien.py](/Alion_invasion/alien.py)
         * 提供外星人
+    5. [game_stats.py](/Alion_invasion/game_stats.py)
+        * 储存游戏统计信息
 ### 杂项  
 * 本项目由python编写  
-- 目的是实现python学习的第一个练习项目  
-* 拭目以待  
+- 一个简单的开飞船打外星人的小游戏  
+* 当前已经较为完善
